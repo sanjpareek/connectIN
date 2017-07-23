@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        version="2.0">
+
+    <entity class="com.connectin.models.Users">
+        <table name="Users" schema="connectIN" />
+        <attributes>
+            <basic name="userId">
+                <column name="UserID" nullable="false" precision="11"/>
+            </basic>
+            <basic name="lastName">
+                <column name="LastName" nullable="false"/>
+            </basic>
+            <basic name="firstName">
+                <column name="FirstName" nullable="false"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>

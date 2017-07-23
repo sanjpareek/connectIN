@@ -1,0 +1,28 @@
+html{
+    border: solid 2px black;
+    margin: 10px;
+    height: 100%;
+}
+#header{
+    font-size: 24px; color: cornflowerblue;
+    margin: 5px;
+}
+
+#loginText{
+    font-size: 14px;
+    color: blueviolet;
+    padding: 10px 10px 10px 0px;
+}
+
+input{
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#userId, #password, #signUpText{
+    margin-right: 10px;
+}
+
+form{
+    align-items: center}
+

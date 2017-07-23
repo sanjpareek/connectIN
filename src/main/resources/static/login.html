@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"></meta>
+    <link rel="stylesheet" type="text/css" href="login.css" />
+    <title>Login</title>
+</head>
+<body>
+<header id="header">Welcome to connectIN</header>
+<form>
+    <span id ="loginText">Login</span>
+    <input type="text" placeholder="Enter your id" id="userId" name="userId"/>
+    <input type="password" placeholder="Enter your password" id="password"/>
+    <button id="loginButton" onclick="return loginUser();">Login</button>
+</form>
+    <div><span id="signUpText">New User?</span>
+        <button id="signUpButton" onclick="return openSignUp();"> Click here to SIGN UP</button>
+    </div>
+
+<script src="login.js"></script>
+
+</body>
+</html>
