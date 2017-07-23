@@ -1,10 +1,14 @@
 package com.connectin;
 
+import com.connectin.Utility.Utility;
 import com.connectin.models.Users;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.Map;
 
 /**
  * Created by sanjana on 22/7/17.
@@ -28,16 +32,17 @@ public class MainController {
         return "user_profile.html";
     }
 
-    @RequestMapping("/signIn")
-    public @ResponseBody Users signInUser(String userId){
-        Users user = DBServices.getUser(userId);
+    @RequestMapping(value = "/signIn", method = RequestMethod.POST)
+    public @ResponseBody Users signInUser(@RequestBody String loginData){
+        Map<String, String> params = Utility.getQueryParams(loginData);
+        Users user = DBServices.getUser(params.get("userId"),  params.get("password"));
         return user;
     }
 
     @RequestMapping(value = "/newUser", method = RequestMethod.GET)
-    public String addNewUser(String userId, String firstName, String lastName, String email){
+    public String addNewUser(String userId,String password,  String firstName, String lastName, String email){
         try{
-            DBServices.insertRecord(userId,firstName, lastName, email);
+            DBServices.insertRecord(userId, password, firstName, lastName, email);
         }catch (Exception e){
             System.out.print("Encountered exception : " + e);
         }

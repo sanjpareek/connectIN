@@ -14,10 +14,11 @@ public class DBServices {
    static SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
    static Session session = sessionFactory.openSession();
 
-        public static void insertRecord(String userId, String firstName, String lastName, String email){
+        public static void insertRecord(String userId,String password, String firstName, String lastName, String email){
             Transaction transaction = session.beginTransaction();
             Users user = new Users();
             user.setUserId(userId);
+            user.setPassword(password);
             user.setLastName(lastName);
             user.setFirstName(firstName);
             user.setEmail(email);
@@ -26,11 +27,12 @@ public class DBServices {
             transaction.commit();
         }
 
-        public static Users getUser(String userId){
+        public static Users getUser(String userId, String password){
 
             Transaction transaction = session.beginTransaction();
-            Query query = session.createQuery("from Users where userId= :userId");
+            Query query = session.createQuery("from Users where userId= :userId and password= :password");
             query.setParameter("userId" , userId);
+            query.setParameter("password" , password);
             Users users = (Users)query.uniqueResult();
             transaction.commit();
             return users;

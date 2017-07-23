@@ -11,12 +11,19 @@ function loginUser() {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
            var user = xhttp.responseText;
-           window.sessionStorage.setItem("user", user);
-            window.location = "/profile";
+           if(user.length == 0){
+                document.getElementById('errorMsg').innerHTML = "Invalid Id or password! Please try again.";
+           }else{
+               window.sessionStorage.setItem("user", user);
+               window.location = "/profile";
+           }
+
         }
     }
     var userId = document.getElementById('userId').value;
-    xhttp.open("GET", "/signIn?userId=" + userId, true);
-    xhttp.send();
+    var password = document.getElementById('password').value;
+    var params = "userId=" + userId + "&password=" + password;
+    xhttp.open("POST", "/signIn", true);
+    xhttp.send(params);
     return false;
 }

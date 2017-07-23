@@ -22,6 +22,17 @@ public class Users implements Serializable {
     @Basic
     @Column(name = "Email", length = 50, nullable = false)
     private String email;
+    @Basic
+    @Column(name = "Password", length = 50, nullable = false)
+    private String password;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     @Override
     public boolean equals(Object o) {
