@@ -1,5 +1,5 @@
 # connectIN
-This a social network created as part of an assignment.
+This a social networking application created as part of an assignment.
 
 Steps to set up the project after you have cloned it:
 
