@@ -6,8 +6,31 @@
     <title>Profile</title>
 </head>
 <body>
+
+<ul id="headerBar">
+    <li onclick="profileLoad()"><a href="#">Home</a></li>
+    <li onclick="friendsList()"><a>Friends</a></li>
+    <li><a href="/logout">Logout</a></li>
+</ul>
+<div style="display : none" id="friendsDiv">
+    <ul id="friendsList">
+        <li onclick="searchUser(this)">George Clooney</li>
+        <li onclick="searchUser(this)">Mark Waugh</li>
+        <li onclick="searchUser(this)">Fred Geoffrey</li>
+        <li onclick="searchUser(this)">Cersei Lannister</li>
+        <li onclick="searchUser(this)">Jon Snow</li>
+        <li onclick="searchUser(this)">Robert Baratheon</li>
+    </ul>
+    <input type="text" placeholder="Search Friends.." id="userId" name="userId"/>
+    <button id="searchButton" onclick="return searchUser();">Search</button>
+</div>
+<div id="centerDiv">
+<img src = "Elon-Musk.png" alt="Profile Picture" id="userPic">
 <div><span> Hi! </span><span id="userName"></span></div>
 <div><span>Email : </span><span id="email"></span></div>
+</div>
 <script src="user_profile.js"></script>
+<script>profileLoad();
+</script>
 </body>
 </html>

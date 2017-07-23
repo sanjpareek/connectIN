@@ -49,5 +49,10 @@ public class MainController {
         return loginCall();
     }
 
+    @RequestMapping(value = "/logout")
+    public String logOut(){
+        return "login.html";
+    }
+
 }
 

@@ -7,16 +7,22 @@
 </head>
 <body>
 <header id="header">Welcome to connectIN</header>
+<div id="centerDiv">
 <form>
-    <span id ="loginText">Login</span>
+    <span id ="loginText">LOGIN</span>
     <div id="errorMsg"></div>
     <input type="text" placeholder="Enter your id" id="userId" name="userId"/>
+    <br><br>
     <input type="password" placeholder="Enter your password" id="password"/>
+    <br><br>
     <button id="loginButton" onclick="return loginUser();">Login</button>
 </form>
+    <br><br>
     <div><span id="signUpText">New User?</span>
+        <br>
         <button id="signUpButton" onclick="return openSignUp();"> Click here to SIGN UP</button>
     </div>
+</div>
 
 <script src="login.js"></script>
 

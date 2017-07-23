@@ -6,11 +6,13 @@ html{
 #header{
     font-size: 24px; color: cornflowerblue;
     margin: 5px;
+    background-color: #333;
+    padding: 10px;
 }
 
 #loginText{
-    font-size: 14px;
-    color: blueviolet;
+    font-size: 18px;
+    color: cornflowerblue;
     padding: 10px 10px 10px 0px;
 }
 
@@ -26,3 +28,47 @@ input{
 form{
     align-items: center}
 
+img{
+    width:304px;height:228px;
+}
+
+#centerDiv{
+    margin-left: 35%;
+    margin-top: 5%;
+}
+
+#headerBar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+#headerBar li {
+    float: left;
+}
+
+#headerBar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#headerBar li a:hover {
+    background-color: #111;
+}
+
+#errorMsg{
+    color: darkred;
+}
+
+#friendsList li{
+    padding: 5px;
+}
+
+li{
+    cursor: pointer;
+}
